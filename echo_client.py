@@ -2,7 +2,7 @@ import socket
 import sys
 
 #server address/port
-server_address = ('127.0.0.1', 10000)
+server_address = ('10.0.0.69', 10000)
 
 #create socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
