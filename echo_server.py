@@ -5,13 +5,18 @@ import socket
 import sys
 import queue
 
+host = ''   # Symbolic name, meaning all available interfaces
+port = 12345 # Arbitrary non-privileged port
+
 # Create a TCP/IP socket
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setblocking(0)
 
-# Bind the socket to the port
-server_address = (socket.gethostbyname(socket.gethostname()), 10000)
-server.bind(server_address)
+#Bind socket to local host and port
+try:
+    server.bind((host, port))
+except socket.error as msg:
+    sys.exit()
 
 # Listen for incoming connections
 server.listen(5)

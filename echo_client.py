@@ -2,7 +2,7 @@ import socket
 import sys
 
 #server address/port
-server_address = ('10.0.0.69', 10000)
+server_address = ('10.0.0.69', 12345)
 
 #create socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -12,13 +12,6 @@ print ('connecting to ' + str(server_address))
 s.connect(server_address)
 print ('username:')
 
-#data = s.recv(1024).decode('ascii')
-#print(data)
-#message = input()
-##send message
-##print("sending " + message)
-#s.send(message.encode('ascii'))
-    
 while True:
     message = input()
     
